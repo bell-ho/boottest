@@ -1,4 +1,4 @@
-package com.drst.soft.boottest.dto;
+package com.drst.soft.boottest.test.dto;
 
 import lombok.Data;
 

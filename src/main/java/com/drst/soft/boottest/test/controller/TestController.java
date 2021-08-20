@@ -1,6 +1,6 @@
-package com.drst.soft.boottest.controller;
+package com.drst.soft.boottest.test.controller;
 
-import com.drst.soft.boottest.dto.TestDTO;
+import com.drst.soft.boottest.test.dto.TestDTO;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
