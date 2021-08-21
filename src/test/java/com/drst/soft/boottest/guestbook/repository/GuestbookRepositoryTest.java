@@ -25,7 +25,7 @@ class GuestbookRepositoryTest {
 
     @Test
     public void insertDD() {
-        IntStream.rangeClosed(1, 10).forEach(i -> {
+        IntStream.rangeClosed(1, 300).forEach(i -> {
             Guestbook guestbook = Guestbook.builder()
                     .title("Title..." + i)
                     .content("Content..." + i)
