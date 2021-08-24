@@ -50,9 +50,12 @@ public class GuestbookController {
     }
 
     @GetMapping("/read")
-    public GuestbookDTO read(long guestNum , @ModelAttribute("requestDTO") PageRequestDTO pageRequestDTO) {
-        log.info("guestNum : "+guestNum);
+    @ResponseBody
+    public GuestbookDTO read(@RequestParam("guestNum") long guestNum) {
+
         GuestbookDTO dto = service.read(guestNum);
+
+        System.out.println(dto);
 
         return dto;
     }
