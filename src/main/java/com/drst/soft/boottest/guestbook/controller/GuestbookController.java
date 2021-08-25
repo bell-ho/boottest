@@ -49,7 +49,7 @@ public class GuestbookController {
         Long guestNum = service.register(dto);
     }
 
-    @GetMapping("/read")
+    @GetMapping({"/read", "/modify"})
     @ResponseBody
     public GuestbookDTO read(@RequestParam("guestNum") long guestNum) {
 
@@ -58,5 +58,19 @@ public class GuestbookController {
         System.out.println(dto);
 
         return dto;
+    }
+
+    @PostMapping("/remove")
+    @ResponseBody
+    public void remove(@RequestParam("guestNum") Long guestNum) {
+        service.remove(guestNum);
+    }
+
+    @PostMapping("/modify")
+    @ResponseBody
+    public void modify(@RequestBody GuestbookDTO dto) {
+        log.info(dto);
+
+        service.modify(dto);
     }
 }
