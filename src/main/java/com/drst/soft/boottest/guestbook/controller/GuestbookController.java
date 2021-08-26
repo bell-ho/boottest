@@ -50,9 +50,15 @@ public class GuestbookController {
 
         GuestbookDTO dto = service.read(guestNum);
 
-        System.out.println(dto);
-
         return dto;
+    }
+
+    @PostMapping("/modify")
+    @ResponseBody
+    public void modify(@RequestBody GuestbookDTO dto) {
+        log.info("dto...." + dto);
+
+        service.modify(dto);
     }
 
     @PostMapping("/remove")
@@ -61,11 +67,4 @@ public class GuestbookController {
         service.remove(guestNum);
     }
 
-    @PostMapping("/modify")
-    @ResponseBody
-    public void modify(@RequestBody GuestbookDTO dto) {
-        log.info(dto);
-
-        service.modify(dto);
-    }
 }
