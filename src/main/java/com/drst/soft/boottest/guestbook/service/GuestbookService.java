@@ -12,6 +12,10 @@ public interface GuestbookService {
 
     GuestbookDTO read(Long guestNum);
 
+    void remove(Long guestNum);
+
+    void modify(GuestbookDTO dto);
+
     default Guestbook dtoToEntity(GuestbookDTO dto) {
         Guestbook entity = Guestbook.builder()
                 .guestNum(dto.getGuestNum())
