@@ -8,8 +8,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @SpringBootTest
 class GuestbookServiceImplTest {
 
@@ -32,6 +30,8 @@ class GuestbookServiceImplTest {
         PageRequestDTO pageRequestDTO = PageRequestDTO.builder()
                 .page(1)
                 .size(10)
+                .searchType("tc")
+                .keyword("Sample")
                 .build();
 
         PageResultDTO<GuestbookDTO, Guestbook> resultDTO = service.getList(pageRequestDTO);
@@ -50,4 +50,5 @@ class GuestbookServiceImplTest {
 
         resultDTO.getPageList().forEach(i -> System.out.println(i));
     }
+
 }
