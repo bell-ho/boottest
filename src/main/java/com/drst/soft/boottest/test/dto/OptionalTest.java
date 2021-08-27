@@ -17,6 +17,8 @@ public class OptionalTest {
         }
 
         Person p1 = new Person();
+        p1.name = "aa";
+
         Person p2 = null;
         Optional<Person> optp = Optional.of(p1);
         Optional<Person> optp2 = Optional.ofNullable(p2);
